@@ -84,7 +84,6 @@ bf$gdd.s <- (bf$gdd-mean(bf$gdd))/sd(bf$gdd)
 bf$prop <- bf$F..cul/bf$F..pse
 #Section 4: Creating Figure 1----
 par(mfrow=c(3,2))
-par(cex=1.5)
 plot(af$field,af$prop,pch=16,col=col.alpha("black",alpha=0.2),main="A",ylim=c(0,1),ylab=expression("Proportion "~italic("F. culmorum")),xlab="Field",axes=FALSE)
 box()
 axis(1,at=seq(1,9,1),las=1)
@@ -159,7 +158,7 @@ pairs(post.1$a_iteration[1:1000,],gap=0)
 
 #Section 7: Creating Figure 2----
 #simulating counts of F. culmorum from the posterior distribution
-m.1.sim <- sim(m.2,n=1000)
+m.1.sim <- sim(m.1,n=1000)
 #making matrix of x values
 m <- matrix(0,1000,9)
 m[,1] = 1
@@ -173,8 +172,7 @@ m[,8] = 8
 m[,9] = 9
 #season names for titles
 seasons <- as.vector(c("Jun 2016","Sep 2016","Dec 2016","Mar 2017","Jun 2017","Sep 2017","Dec 2017","Mar 2018"))
-#ploting
-windows(100,100)
+#plotting
 par(mfrow=c(9,8))
 par(oma=c(4,4,2,1))
 ls <- c(TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE)
@@ -186,8 +184,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(seasons[n],line=0,side=3)
   mtext(ns[n],line=-1.5,side=3)
 }
@@ -200,8 +198,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 3
@@ -213,8 +211,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 4
@@ -226,8 +224,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 5
@@ -239,8 +237,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 6
@@ -252,8 +250,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 7
@@ -265,8 +263,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 8
@@ -278,8 +276,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=FALSE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 #field 9
@@ -291,8 +289,8 @@ for(n in 1:8){
   box()
   axis(1,at=seq(1,9,1),las=1,labels=TRUE)
   axis(2,at=seq(0,40,10),las=1,labels=ls[n])
-  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("black",alpha=0.1))
-  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("red",alpha=1),cex=2)
+  points(x=m[1:100,1:9],y=m.1.sim[1:100,fs[n]:(fs[n]+8)],pch=16,col=col.alpha("orange",alpha=0.1))
+  points(af$culmorum[fs[n]:(fs[n]+8)],pch=16,col=col.alpha("blue",alpha=1),cex=1.5)
   mtext(ns[n],line=-1.5,side=3)
 }
 mtext("Quadrat number", side = 1, outer = TRUE, line = 2)
