@@ -3,7 +3,7 @@
 # Code used for Phytopathology manuscript titled:
 # Utility of a multilevel modelling approach to investigate differences in isolation frequency of Fusarium culmorum in agricultural soil across the Inland Pacific Northwest
 #
-# Revision Date: 2018-10-26
+# Revision Date: 2018-10-17
 # 
 #   Section 1:   Loading in dataframe for current study
 #   Section 2:   Processing variables and creating features
