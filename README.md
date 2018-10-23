@@ -1,10 +1,2 @@
 # PHYTO-05-18-0168-R
-Datasets and code used in a manuscript submitted to Phytopathology
-
-soilpop.csv
-
-F. culmorum isolation records from soils across Inland pacific Northwest
-
-dbackhouse2004.csv
-
-F. culmorum isolation records from wheat across eastern Australia, generously provided by Dr. David Backhouse
+##Utility of a multilevel modelling approach to investigate differences in isolation frequency of Fusarium culmorum in agricultural soil across the Inland Pacific Northwest
